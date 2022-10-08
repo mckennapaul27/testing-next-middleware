@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-export function middleware(request) {
+export default function middleware(request) {
     console.log(request);
     if (request.nextUrl.pathname.startsWith('/about')) {
         return NextResponse.rewrite(new URL('/about-2', request.url));
