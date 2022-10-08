@@ -1,7 +1,17 @@
 import { NextResponse } from 'next/server';
 
 export function middleware(req) {
-    console.log('Middleware file', req.nextUrl, req.geo, req.cookies, req.ip);
+    console.log('Middleware file');
+    console.log(req.nextUrl);
+    console.log(req.geo);
+    console.log(req.cookies);
+    console.log(req.ip);
+    if (req.url) {
+        console.log(req.url);
+    } else {
+        console.log('req.url not found');
+    }
+
     // if (request.nextUrl.pathname.startsWith('/about')) {
     //     return NextResponse.rewrite(new URL('/about-2', request.url));
     // }
